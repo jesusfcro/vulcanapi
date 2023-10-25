@@ -1,4 +1,4 @@
-name: Deploy
+name: Patch
 
 on:
   push:
@@ -9,13 +9,11 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    env:
-      API_HOST: www.vulcan.mpi-internal.com
-      SRC_BRANCH: master
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - name: patch
+        env:
+          API_HOST: www.vulcan.mpi-internal.com
+          SRC_BRANCH: master
+        run: ./patch.sh
 
-      - name: Deploy
-        run: |
-          ./patch.sh
