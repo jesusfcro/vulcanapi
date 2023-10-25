@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  deploy:
+    runs-on: size/small
+    env:
+      API_HOST: www.vulcan.mpi-internal.com
+      SRC_BRANCH: master
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        run: |
+          ./patch.sh
