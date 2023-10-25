@@ -9,10 +9,9 @@ curl -s "https://raw.githubusercontent.com/adevinta/vulcan-api/$SRC_BRANCH/swagg
 git add docs/swagger.json
 
 git config --global user.name "github"
-git config --global user.email "github@example.org"
-
+git config --global user.email "github@users.noreply.github.com"
 if ! git diff-index --quiet --cached HEAD; then
-    git commit -m "Update docs [skip ci]"
+    git commit -m "Update docs"
     git push
 else
     echo "No updates need to be commited"
