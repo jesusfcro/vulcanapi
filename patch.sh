@@ -12,7 +12,7 @@ git config --global user.name "github"
 git config --global user.email "github@example.org"
 
 if ! git diff-index --quiet --cached HEAD; then
-    git commit -m "Update docs"
+    git commit -m "Update docs [skip ci]"
     git push
 else
     echo "No updates need to be commited"
