@@ -3700,175 +3700,6 @@
         ]
       }
     },
-    "/teams/{team_id}/scans/{scan_id}/report": {
-      "get": {
-        "tags": [
-          "scan report"
-        ],
-        "summary": "show scan report",
-        "description": "Show information about a scan report",
-        "operationId": "scan report#show",
-        "produces": [
-          "report"
-        ],
-        "parameters": [
-          {
-            "name": "scan_id",
-            "in": "path",
-            "description": "Scan ID",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "team_id",
-            "in": "path",
-            "description": "Team ID",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Report"
-            }
-          }
-        },
-        "schemes": [
-          "https"
-        ],
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      },
-      "post": {
-        "tags": [
-          "scan report"
-        ],
-        "summary": "generate scan report",
-        "description": "Triggers report generation. The report will be generated asynchronously on Vulcan Backend.",
-        "operationId": "scan report#generate",
-        "parameters": [
-          {
-            "name": "scan_id",
-            "in": "path",
-            "description": "Scan ID",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "team_id",
-            "in": "path",
-            "description": "Team ID",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "Accepted"
-          }
-        },
-        "schemes": [
-          "https"
-        ],
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/teams/{team_id}/scans/{scan_id}/report/email": {
-      "get": {
-        "tags": [
-          "scan report"
-        ],
-        "summary": "email scan report",
-        "description": "Retrieve the report in html format to be sent by email.",
-        "operationId": "scan report#email",
-        "produces": [
-          "reportemail"
-        ],
-        "parameters": [
-          {
-            "name": "scan_id",
-            "in": "path",
-            "description": "Scan ID",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "team_id",
-            "in": "path",
-            "description": "Team ID",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Reportemail"
-            }
-          }
-        },
-        "schemes": [
-          "https"
-        ],
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/teams/{team_id}/scans/{scan_id}/report/send": {
-      "post": {
-        "tags": [
-          "scan report"
-        ],
-        "summary": "send scan report",
-        "description": "Send the generated report by email to the team recipients.",
-        "operationId": "scan report#send",
-        "produces": [
-          "NoContent"
-        ],
-        "parameters": [
-          {
-            "name": "scan_id",
-            "in": "path",
-            "description": "Scan ID",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "team_id",
-            "in": "path",
-            "description": "Team ID",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        },
-        "schemes": [
-          "https"
-        ],
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
     "/teams/{team_id}/stats/coverage": {
       "get": {
         "tags": [
@@ -4556,7 +4387,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "Perferendis cumque enim totam ut."
+            "example": "Est illo et corrupti rerum deleniti aut."
           },
           "example": [
             "annotation/1",
@@ -5062,7 +4893,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "Sequi et sed."
+            "example": "Ducimus sit odio tenetur consequatur."
           },
           "example": [
             "a14c7c65-66ab-4676-bcf6-0dea9719f5c6",
@@ -5748,16 +5579,6 @@
           "status_previous": "OPEN",
           "team_id": "a9d33628-ddb0-467c-b482-474887097820",
           "user": "user@adevinta.com"
-        },
-        {
-          "created_at": "2021-03-27T00:26:43.211506Z",
-          "finding_id": "3c7d7003-c53d-4ccc-80e7-f21da241b2d4",
-          "id": "b0720503-0a84-43fd-9cf4-5bb6c500226f",
-          "notes": "This finding is a false positive because...",
-          "status": "FALSE_POSITIVE",
-          "status_previous": "OPEN",
-          "team_id": "a9d33628-ddb0-467c-b482-474887097820",
-          "user": "user@adevinta.com"
         }
       ]
     },
@@ -5832,6 +5653,20 @@
           "resources_count": 28,
           "summary": "Site Without HTTPS",
           "targets_count": 14
+        },
+        {
+          "issue_id": "a8720503-0284-45fd-9cf4-5bb6c500966f",
+          "max_score": 6.9,
+          "resources_count": 28,
+          "summary": "Site Without HTTPS",
+          "targets_count": 14
+        },
+        {
+          "issue_id": "a8720503-0284-45fd-9cf4-5bb6c500966f",
+          "max_score": 6.9,
+          "resources_count": 28,
+          "summary": "Site Without HTTPS",
+          "targets_count": 14
         }
       ]
     },
@@ -5873,7 +5708,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "Eos illum ipsum."
+            "example": "Nihil velit magni id et vero in."
           },
           "description": "associated labels",
           "example": [
@@ -5904,6 +5739,92 @@
       "description": "Findings list (default view)",
       "example": {
         "findings": [
+          {
+            "affected_resource": "",
+            "attachments": [
+              {
+                "content_type": "application/json",
+                "data": "e30=",
+                "name": "JSON string"
+              },
+              {
+                "content_type": "application/json",
+                "data": "e30=",
+                "name": "JSON string"
+              },
+              {
+                "content_type": "application/json",
+                "data": "e30=",
+                "name": "JSON string"
+              }
+            ],
+            "current_exposure": 4631,
+            "details": "",
+            "id": "a8720503-0284-45fd-9cf4-5bb6c500966f",
+            "impact_details": "",
+            "issue": {
+              "cwe_id": 358,
+              "description": "This domain has at least one MX record",
+              "id": "b0720503-0a84-43fd-9cf4-5bb6c500226f",
+              "labels": [
+                "Web",
+                "HTTP"
+              ],
+              "recommendations": [
+                "It is recommended to run DMARC"
+              ],
+              "reference_links": [],
+              "summary": "MX presence"
+            },
+            "resources": [
+              {
+                "attributes": [
+                  "Hostname",
+                  "Port"
+                ],
+                "name": "Network Resources",
+                "resources": [
+                  {
+                    "Hostname": "test.example.com",
+                    "Port": "443"
+                  }
+                ]
+              },
+              {
+                "attributes": [
+                  "Hostname",
+                  "Port"
+                ],
+                "name": "Network Resources",
+                "resources": [
+                  {
+                    "Hostname": "test.example.com",
+                    "Port": "443"
+                  }
+                ]
+              }
+            ],
+            "score": 6.9,
+            "source": {
+              "component": "vulcan-tls",
+              "id": "f8129c7f-7abf-41ba-ab1f-c97090bb3db4",
+              "instance": "b3320f03-1284-42fd-9cf4-5bb6c500966f",
+              "name": "vulcan",
+              "options": "{\"timeout\":60}",
+              "time": "2019-06-08 11:16:40"
+            },
+            "status": "OPEN",
+            "target": {
+              "id": "f8129c7f-7abf-41ba-ab1f-c97090bb3db4",
+              "identifier": "www.test.com",
+              "teams": [
+                "a9d33628-ddb0-467c-b482-474887097820",
+                "9cb0bb2b-ca36-4877-acad-9dde23880595"
+              ]
+            },
+            "total_exposure": 4631,
+            "url_tracker": "https://jiraserver.example.com/browse/TEST-123"
+          },
           {
             "affected_resource": "",
             "attachments": [
@@ -6084,20 +6005,6 @@
             "issues_count": 2,
             "max_score": 6.9,
             "target_id": "a8720503-0284-45fd-9cf4-5bb6c500966f"
-          },
-          {
-            "findings_count": 5,
-            "identifier": "vulcan.example.com",
-            "issues_count": 2,
-            "max_score": 6.9,
-            "target_id": "a8720503-0284-45fd-9cf4-5bb6c500966f"
-          },
-          {
-            "findings_count": 5,
-            "identifier": "vulcan.example.com",
-            "issues_count": 2,
-            "max_score": 6.9,
-            "target_id": "a8720503-0284-45fd-9cf4-5bb6c500966f"
           }
         ]
       }
@@ -6241,6 +6148,12 @@
           "id": "f6360346-77a5-4f97-b919-331363b3af26",
           "name": "Default group",
           "options": "{\"timeout\":60}"
+        },
+        {
+          "description": "All newly created assets are added to the Default group",
+          "id": "f6360346-77a5-4f97-b919-331363b3af26",
+          "name": "Default group",
+          "options": "{\"timeout\":60}"
         }
       ]
     },
@@ -6283,7 +6196,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "Velit quis."
+            "example": "Maxime natus esse neque aliquid."
           },
           "description": "Associated labels",
           "example": [
@@ -6295,7 +6208,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "Omnis perferendis."
+            "example": "Velit quis."
           },
           "description": "Recommendations to fix the issue",
           "example": [
@@ -6306,7 +6219,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "Natus esse neque aliquid."
+            "example": "Quas voluptatum sit eos illum ipsum tempora."
           },
           "description": "Documentation reference for the issue",
           "example": []
@@ -6496,6 +6409,44 @@
       },
       "description": "ListassetentryCollection is the media type for an array of Listassetentry (default view)",
       "example": [
+        {
+          "alias": "AnAlias",
+          "annotations": {
+            "annotation/1": "value/1",
+            "annotation/2": "value/2"
+          },
+          "classified_at": "2020-09-03T15:00:42.112975Z",
+          "environmental_cvss": "AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          "groups": [
+            {
+              "description": "All newly created assets are added to the Default group",
+              "id": "f6360346-77a5-4f97-b919-331363b3af26",
+              "name": "Default group",
+              "options": "{\"timeout\":60}"
+            },
+            {
+              "description": "All newly created assets are added to the Default group",
+              "id": "f6360346-77a5-4f97-b919-331363b3af26",
+              "name": "Default group",
+              "options": "{\"timeout\":60}"
+            },
+            {
+              "description": "All newly created assets are added to the Default group",
+              "id": "f6360346-77a5-4f97-b919-331363b3af26",
+              "name": "Default group",
+              "options": "{\"timeout\":60}"
+            }
+          ],
+          "id": "a8720503-0284-45fd-9cf4-5bb6c500966f",
+          "identifier": "vulcan.example.com",
+          "options": "{\"timeout\":60}",
+          "rolfp": "R:1/O:1/L:0/F:0/P:0+S:1",
+          "scannable": true,
+          "type": {
+            "id": "29f83d16-09c4-4be5-8cae-e232d41f388a",
+            "name": "Hostname"
+          }
+        },
         {
           "alias": "AnAlias",
           "annotations": {
@@ -6782,6 +6733,11 @@
       },
       "description": "PolicysettingCollection is the media type for an array of Policysetting (default view)",
       "example": [
+        {
+          "checktype_name": "vulcan-tls",
+          "id": "5e51174d-3755-48b2-98bf-37e37cb07f6e",
+          "options": "{\"timeout\":60}"
+        },
         {
           "checktype_name": "vulcan-tls",
           "id": "5e51174d-3755-48b2-98bf-37e37cb07f6e",
@@ -7196,9 +7152,6 @@
         },
         {
           "email": "john.doe@vulcan.example.com"
-        },
-        {
-          "email": "john.doe@vulcan.example.com"
         }
       ]
     },
@@ -7210,7 +7163,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "Vero in architecto sapiente voluptatum deserunt at."
+            "example": "Ratione corrupti soluta."
           },
           "description": "Emails",
           "example": [
@@ -7229,66 +7182,6 @@
         "emails"
       ]
     },
-    "Report": {
-      "title": "Mediatype identifier: report; view=default",
-      "type": "object",
-      "properties": {
-        "delivered_to": {
-          "type": "string",
-          "description": "Delivered To",
-          "example": "john.doe@vulcan.example.com, jane.doe@vulcan.example.com"
-        },
-        "id": {
-          "type": "string",
-          "description": "Report ID",
-          "example": "a7f3a072-67bb-41ad-941e-25afcafc0ed5"
-        },
-        "report": {
-          "type": "string",
-          "description": "Report URL",
-          "example": "https://insights.vulcan.example.com/2b3123c0b0083ab6d87b7bb743652b9a58125079258b8b4650511bd47bc1a552/2018-07-10/360f1c3a-f0e9-4c10-b557-ebf3015a61a9-full-report.html"
-        },
-        "report_json": {
-          "type": "string",
-          "description": "Report JSON URL",
-          "example": "https://insights.vulcan.example.com/2b3123c0b0083ab6d87b7bb743652b9a58125079258b8b4650511bd47bc1a552/2018-07-10/360f1c3a-f0e9-4c10-b557-ebf3015a61a9-full-report.json"
-        },
-        "scan_id": {
-          "type": "string",
-          "description": "Scan ID",
-          "example": "360f1c3a-f0e9-4c10-b557-ebf3015a61a9"
-        },
-        "status": {
-          "type": "string",
-          "description": "Status",
-          "example": "FINISHED"
-        }
-      },
-      "description": "Report (default view)",
-      "example": {
-        "delivered_to": "john.doe@vulcan.example.com, jane.doe@vulcan.example.com",
-        "id": "a7f3a072-67bb-41ad-941e-25afcafc0ed5",
-        "report": "https://insights.vulcan.example.com/2b3123c0b0083ab6d87b7bb743652b9a58125079258b8b4650511bd47bc1a552/2018-07-10/360f1c3a-f0e9-4c10-b557-ebf3015a61a9-full-report.html",
-        "report_json": "https://insights.vulcan.example.com/2b3123c0b0083ab6d87b7bb743652b9a58125079258b8b4650511bd47bc1a552/2018-07-10/360f1c3a-f0e9-4c10-b557-ebf3015a61a9-full-report.json",
-        "scan_id": "360f1c3a-f0e9-4c10-b557-ebf3015a61a9",
-        "status": "FINISHED"
-      }
-    },
-    "Reportemail": {
-      "title": "Mediatype identifier: reportemail; view=default",
-      "type": "object",
-      "properties": {
-        "email_body": {
-          "type": "string",
-          "description": "Email Body",
-          "example": "<html><body><title>...</title></body></html>"
-        }
-      },
-      "description": "Report Email Body (default view)",
-      "example": {
-        "email_body": "<html><body><title>...</title></body></html>"
-      }
-    },
     "Resource": {
       "title": "Mediatype identifier: resource; view=default",
       "type": "object",
@@ -7297,7 +7190,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "Voluptate est."
+            "example": "Sequi et sed."
           },
           "description": "attributes of a resource",
           "example": [
@@ -7315,7 +7208,7 @@
           "items": {
             "type": "object",
             "example": {
-              "Et corrupti rerum.": "Aut sed illo porro."
+              "Sed qui sint ratione perferendis cumque.": "Totam ut perspiciatis."
             },
             "additionalProperties": true
           },
@@ -7456,6 +7349,106 @@
       },
       "description": "ScanCollection is the media type for an array of Scan (default view)",
       "example": [
+        {
+          "checks_count": 20,
+          "end_time": "2018-09-07T10:40:52Z",
+          "id": "23e7034f-8180-4895-8e7f-73f2f7d90631",
+          "program": {
+            "autosend": false,
+            "disabled": false,
+            "global": true,
+            "id": "9a100645-e51a-4e71-8a4f-1e462ce9a40d",
+            "name": "Every midnight",
+            "policy_groups": [
+              {
+                "group": {
+                  "assets_count": 1,
+                  "description": "All newly created assets are added to the Default group",
+                  "id": "f6360346-77a5-4f97-b919-331363b3af26",
+                  "name": "Default group",
+                  "options": "{\"timeout\":60}"
+                },
+                "policy": {
+                  "id": "af36818a-0f30-412c-9692-d37716075861",
+                  "name": "Sample Policy",
+                  "settings_count": 12
+                }
+              },
+              {
+                "group": {
+                  "assets_count": 1,
+                  "description": "All newly created assets are added to the Default group",
+                  "id": "f6360346-77a5-4f97-b919-331363b3af26",
+                  "name": "Default group",
+                  "options": "{\"timeout\":60}"
+                },
+                "policy": {
+                  "id": "af36818a-0f30-412c-9692-d37716075861",
+                  "name": "Sample Policy",
+                  "settings_count": 12
+                }
+              }
+            ],
+            "schedule": {
+              "cron": "0 7 1 * *"
+            }
+          },
+          "progress": 1,
+          "requested_by": "john.doe@vulcan.example.com",
+          "scheduled_time": "2018-09-07T10:40:52Z",
+          "start_time": "2018-09-07T10:40:52Z",
+          "status": "FINISHED"
+        },
+        {
+          "checks_count": 20,
+          "end_time": "2018-09-07T10:40:52Z",
+          "id": "23e7034f-8180-4895-8e7f-73f2f7d90631",
+          "program": {
+            "autosend": false,
+            "disabled": false,
+            "global": true,
+            "id": "9a100645-e51a-4e71-8a4f-1e462ce9a40d",
+            "name": "Every midnight",
+            "policy_groups": [
+              {
+                "group": {
+                  "assets_count": 1,
+                  "description": "All newly created assets are added to the Default group",
+                  "id": "f6360346-77a5-4f97-b919-331363b3af26",
+                  "name": "Default group",
+                  "options": "{\"timeout\":60}"
+                },
+                "policy": {
+                  "id": "af36818a-0f30-412c-9692-d37716075861",
+                  "name": "Sample Policy",
+                  "settings_count": 12
+                }
+              },
+              {
+                "group": {
+                  "assets_count": 1,
+                  "description": "All newly created assets are added to the Default group",
+                  "id": "f6360346-77a5-4f97-b919-331363b3af26",
+                  "name": "Default group",
+                  "options": "{\"timeout\":60}"
+                },
+                "policy": {
+                  "id": "af36818a-0f30-412c-9692-d37716075861",
+                  "name": "Sample Policy",
+                  "settings_count": 12
+                }
+              }
+            ],
+            "schedule": {
+              "cron": "0 7 1 * *"
+            }
+          },
+          "progress": 1,
+          "requested_by": "john.doe@vulcan.example.com",
+          "scheduled_time": "2018-09-07T10:40:52Z",
+          "start_time": "2018-09-07T10:40:52Z",
+          "status": "FINISHED"
+        },
         {
           "checks_count": 20,
           "end_time": "2018-09-07T10:40:52Z",
@@ -7861,7 +7854,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "Ipsam ducimus sit odio tenetur consequatur quibusdam."
+            "example": "Illo porro placeat omnis."
           },
           "description": "List of TeamIDs associated with target",
           "example": [
@@ -7927,13 +7920,6 @@
       },
       "description": "TeamCollection is the media type for an array of Team (default view)",
       "example": [
-        {
-          "description": "Security Team",
-          "id": "ff74a33c-e683-4612-a62f-a9cf385f6522",
-          "name": "Security",
-          "tag": "team:security",
-          "using_tracker": true
-        },
         {
           "description": "Security Team",
           "id": "ff74a33c-e683-4612-a62f-a9cf385f6522",
@@ -8211,6 +8197,16 @@
           "last_login": "2018-09-07T10:40:52Z",
           "lastname": "Doe",
           "observer": true
+        },
+        {
+          "active": true,
+          "admin": true,
+          "email": "john.doe@vulcan.example.com",
+          "firstname": "John",
+          "id": "967d9966-b561-4233-bd6f-cac603fd8320",
+          "last_login": "2018-09-07T10:40:52Z",
+          "lastname": "Doe",
+          "observer": true
         }
       ]
     },
@@ -8298,9 +8294,6 @@
     }
   },
   "responses": {
-    "Accepted": {
-      "description": "Accepted"
-    },
     "OK": {
       "description": "OK"
     }
